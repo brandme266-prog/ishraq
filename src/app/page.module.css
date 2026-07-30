@@ -632,11 +632,13 @@
   color: var(--text-secondary);
 }
 
-/* Responsive adjustment */
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablet (992px and below) */
 @media (max-width: 991px) {
   .hero {
     padding-top: 100px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     min-height: auto;
   }
   .heroGrid {
@@ -653,9 +655,23 @@
     justify-content: center;
   }
   .heroTitle {
-    font-size: 40px;
+    font-size: 42px;
   }
-  .aboutGrid, .quoteGrid, .clientsGrid, .testimonialsGrid {
+  .heroText {
+    font-size: 15px;
+    max-width: 100%;
+  }
+  .heroVisual {
+    order: -1;
+  }
+  .heroImageWrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .aboutGrid,
+  .quoteGrid,
+  .clientsGrid,
+  .testimonialsGrid {
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
@@ -666,7 +682,7 @@
     left: 0;
     transform: none;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 24px;
   }
   .statsGrid {
@@ -687,20 +703,111 @@
     top: 0;
     margin-bottom: 20px;
   }
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (max-width: 576px) {
-  .heroTitle {
-    font-size: 32px;
-  }
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
   .hero {
     padding-top: 90px;
+    padding-bottom: 50px;
+  }
+  .heroTitle {
+    font-size: 34px;
+    line-height: 1.3;
+  }
+  .heroBadge {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+  .heroText {
+    font-size: 14px;
+  }
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+  }
+  .heroActions a,
+  .heroActions button {
+    width: 100%;
+    justify-content: center;
   }
   .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .statsBox {
+    padding: 20px;
+  }
+  .servicesGrid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .quoteFormCard {
-    padding: 24px;
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+  .sectionHeader {
+    margin-bottom: 30px;
+  }
+  .sectionTitle {
+    font-size: 28px;
+  }
+  .clientsGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .quoteGrid {
+    grid-template-columns: 1fr;
   }
 }
+
+/* Small Mobile (576px and below) */
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .heroTitle {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .heroImageWrapper {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .statsBox {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .statNumber {
+    font-size: 30px;
+  }
+  .sectionTitle {
+    font-size: 24px;
+  }
+  .quoteFormCard {
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+  .testimonialCard {
+    padding: 20px;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+  .faqItem {
+    padding: 16px;
+  }
+}
+
