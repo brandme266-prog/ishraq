@@ -678,12 +678,15 @@
   }
   .statsBox {
     position: relative;
-    bottom: 0;
-    left: 0;
+    bottom: auto;
+    left: auto;
+    right: auto;
     transform: none;
     width: 100%;
+    max-width: 100%;
     margin-top: 30px;
     padding: 24px;
+    box-sizing: border-box;
   }
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -780,8 +783,8 @@
     border-radius: 12px;
   }
   .statsGrid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
   .statsBox {
     padding: 16px;
