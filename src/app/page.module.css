@@ -33,6 +33,7 @@
   border: 1px solid rgba(212, 175, 55, 0.3);
   padding: 6px 16px;
   border-radius: var(--radius-xl);
+  font-family: var(--font-alexandria);
   font-size: 14px;
   font-weight: 700;
   color: var(--accent);
@@ -40,8 +41,9 @@
 }
 
 .heroTitle {
+  font-family: var(--font-alexandria);
   font-size: 56px;
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.25;
   margin-bottom: 24px;
 }

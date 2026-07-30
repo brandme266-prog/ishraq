@@ -1,8 +1,21 @@
 import type { Metadata, Viewport } from "next";
+import { Almarai, Alexandria } from 'next/font/google';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
+
+const almarai = Almarai({
+  subsets: ['arabic'],
+  weight: ['300', '400', '700', '800'],
+  variable: '--font-almarai',
+});
+
+const alexandria = Alexandria({
+  subsets: ['arabic'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-alexandria',
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -40,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning className={`${almarai.variable} ${alexandria.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
