@@ -1,0 +1,194 @@
+.portfolioHeader {
+  padding: 120px 0 60px 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.desc {
+  color: var(--text-secondary);
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Filter Navigation */
+.filterNav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filterBtn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 10px 24px;
+  border-radius: var(--radius-xl);
+  font-family: var(--font-alexandria);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.filterBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.filterBtnActive {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  color: #000000;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.projectCard {
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  height: 380px;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+}
+
+/* Abstract Project Visual */
+.projectVisual {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(25, 25, 32, 0.8) 100%);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.projectCard:hover .projectVisual {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(20, 20, 25, 0.9) 100%);
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-normal);
+}
+
+.projectCard:hover .projectImg {
+  transform: scale(1.06);
+}
+
+.projectTag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(10, 10, 11, 0.8);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(5px);
+}
+
+/* Content Area */
+.projectInfo {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  transition: var(--transition-fast);
+}
+
+.projectCard:hover .projectTitle {
+  color: var(--accent);
+}
+
+.projectDesc {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Call to action */
+.ctaSection {
+  text-align: center;
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+
+.ctaCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(25, 25, 32, 0.4) 0%, rgba(18, 18, 21, 0.6) 100%);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-gold);
+}
+
+.ctaTitle {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.ctaText {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  .filterNav {
+    gap: 8px;
+  }
+  .filterBtn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

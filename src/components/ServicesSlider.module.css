@@ -1,0 +1,156 @@
+.sliderContainer {
+  position: relative;
+  width: 100%;
+}
+
+.sliderTrack {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar IE/Edge */
+  scroll-snap-type: x mandatory;
+  padding: 20px 5px 30px 5px; /* Padding for card shadows/transforms */
+  align-items: stretch;
+}
+
+.sliderTrack::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+/* Service Card inside Slider */
+.serviceCard {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: calc((100% - 60px) / 3); /* 3 cards on desktop view */
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.serviceCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md), var(--shadow-gold);
+}
+
+.serviceIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: var(--accent-light);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceName {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-alexandria);
+}
+
+.serviceDesc {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.8;
+  flex-grow: 1;
+}
+
+.serviceLink {
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.serviceLink:hover {
+  color: var(--text-primary);
+}
+
+/* Floating Navigation Buttons */
+.navBtn {
+  position: absolute;
+  top: calc(50% - 30px); /* Align relative to cards height center, excluding the view all button */
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-md);
+}
+
+.prevBtn {
+  right: -23px; /* Hang outside right boundary in RTL */
+}
+
+.nextBtn {
+  left: -23px; /* Hang outside left boundary in RTL */
+}
+
+.navBtn:hover {
+  background-color: var(--accent);
+  color: #000000;
+  border-color: var(--accent);
+  box-shadow: var(--shadow-gold);
+}
+
+/* View All button container */
+.showAllWrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1199px) {
+  .prevBtn {
+    right: -10px;
+  }
+  .nextBtn {
+    left: -10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navBtn {
+    display: none; /* Hide navigation arrows on touch screens */
+  }
+  
+  .serviceCard {
+    width: calc((100% - 30px) / 2); /* 2 cards on tablet view */
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceCard {
+    width: 85%; /* 1.15 cards visible so user can see next card peaking */
+    padding: 30px 24px;
+  }
+  .sliderTrack {
+    gap: 20px;
+  }
+  .showAllWrapper {
+    margin-top: 20px;
+  }
+}
