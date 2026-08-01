@@ -99,7 +99,8 @@ export default function Contact() {
                     <h3 className={styles.cardTitle}>ساعات العمل الرسمية</h3>
                     <p className={styles.cardValue}>
                       السبت - الخميس:<br />
-                      9:00 صباحاً - 9:00 مساءً<br />
+                      8:00 صباحاً - 1:00 مساءً<br />
+                      4:00 مساءً - 9:00 مساءً<br />
                       الجمعة: عطلة أسبوعية
                     </p>
                   </div>
