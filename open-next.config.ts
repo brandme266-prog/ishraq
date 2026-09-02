@@ -1,3 +1,4 @@
+// @ts-ignore: @opennextjs/cloudflare doesn't provide types for this yet
 import cache from "@opennextjs/cloudflare/kvCache";
 
 export default {
