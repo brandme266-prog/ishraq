@@ -3,15 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build && node -e \"const fs=require('fs'); fs.mkdirSync('.next/standalone/.next/server', {recursive:true}); fs.writeFileSync('.next/standalone/.next/server/pages-manifest.json', '{}');\"",
+    "build": "next build",
     "dev": "next dev",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "deploy": "npm run build && npx wrangler pages deploy out --project-name ishraq",
     "start": "next start",
-    "lint": "eslint",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "postinstall": "npx opennextjs-cloudflare build"
+    "lint": "eslint"
   },
   "dependencies": {
     "next": "16.2.12",
@@ -19,7 +15,6 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
